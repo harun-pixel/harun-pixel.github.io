@@ -3,13 +3,13 @@ const projects = [
     slug: "smart-product-category-assistant",
     title: "Smart Product Category Assistant",
     category: "Machine Learning",
-    status: "Featured Build",
-    developmentStatus: "Public demo available",
+    status: "Project Unggulan",
+    developmentStatus: "Demo publik tersedia",
     description:
-      "Retail exploration system that clusters product-transaction snapshots by sales volume and unit price, then presents descriptive profiles and testable business hypotheses.",
-    role: "Data preparation, clustering logic, dashboard UI, AI analyst flow",
+      "Sistem eksplorasi data retail yang mengelompokkan catatan transaksi berdasarkan jumlah terjual dan harga satuan, lalu menyajikan profil setiap kelompok serta hipotesis bisnis yang dapat diuji.",
+    role: "Pengolahan data, logika clustering, desain dashboard, dan alur AI Analyst",
     stack: "Python, Streamlit, Scikit-Learn, K-Means, LLM",
-    output: "Interactive dashboard with snapshot analysis, nearest-cluster assignment, visualization, evaluation, and AI-assisted explanation",
+    output: "Dashboard interaktif untuk analisis data, penempatan ke kelompok terdekat, visualisasi, evaluasi model, dan penjelasan berbantuan AI",
     tags: ["K-Means", "Streamlit", "Retail Analytics", "AI Assistant"],
     previewImage: "./assets/smart-product-preview.png",
     caseLink: "#project-detail",
@@ -17,68 +17,68 @@ const projects = [
     featured: true,
     detail: {
       intro:
-        "Project ini mengeksplorasi kemiripan product-transaction snapshot menggunakan K-Means, lalu menyajikan hasilnya dalam dashboard Streamlit dengan profil deskriptif dan bantuan AI untuk menjelaskan konteksnya.",
+        "Project ini menggunakan K-Means untuk mencari pola kemiripan pada catatan transaksi produk. Hasilnya disajikan melalui dashboard Streamlit agar pengguna dapat melihat karakter setiap kelompok, memeriksa data, dan berdiskusi dengan AI Analyst.",
       objective:
-        "Tujuannya adalah membantu pengguna membandingkan snapshot yang berbeda dalam Units Sold, Unit Price, dan derived revenue, tanpa menyamakan eksplorasi cluster dengan forecasting atau kebijakan retail otomatis.",
+        "Tujuannya adalah membantu pengguna memahami perbedaan pola jumlah terjual dan harga satuan. Dashboard ini digunakan untuk eksplorasi data, bukan untuk meramalkan penjualan, laba, stok, atau keberhasilan promosi.",
       caseStudy: {
         problem:
-          "Tabel retail berisi snapshot dengan kombinasi volume, harga, dan derived revenue yang beragam. Tanpa tampilan yang terstruktur, perbedaan antar-snapshot sulit dibandingkan secara cepat.",
+          "Data retail memiliki kombinasi jumlah terjual, harga satuan, dan nilai transaksi yang beragam. Tanpa tampilan yang terstruktur, pola antarcatatan sulit dibandingkan dan dijelaskan dengan cepat.",
         approach:
-          "K-Means K=3 menggunakan Units Sold dan Unit Price dalam urutan tersebut. Keduanya distandardisasi dengan StandardScaler sebelum assignment. Total Revenue tidak masuk ke model dan hanya dipakai untuk pelaporan serta profiling setelah assignment.",
+          "K-Means membentuk tiga kelompok menggunakan Units Sold dan Unit Price setelah skala keduanya disetarakan dengan StandardScaler. Total Revenue hanya dihitung untuk laporan dan tidak digunakan model saat membentuk cluster.",
         output:
-          "Outputnya adalah dashboard Streamlit untuk melihat profil snapshot, menempatkan snapshot baru ke cluster terdekat, meninjau visual deskriptif, memeriksa evaluasi model, dan berdiskusi dengan AI analyst.",
+          "Hasilnya adalah dashboard Streamlit untuk melihat ringkasan data, memeriksa detail produk, menempatkan catatan baru ke kelompok terdekat, membaca visualisasi, mengevaluasi model, dan berdiskusi dengan AI Analyst.",
         value:
-          "Dashboard memisahkan observed facts, interpretasi cluster, dan hipotesis eksperimen. Ide promosi, bundling, inventory review, atau positioning bukan outcome yang dijanjikan dan harus diuji dengan exposure, conversion, cost/margin, inventory, pelanggan, serta data waktu yang belum tersedia.",
+          "Dashboard membantu membedakan fakta yang dihitung dari data, interpretasi kelompok, dan ide tindakan yang masih perlu diuji. Saran promosi, bundling, atau positioning bukan keputusan otomatis karena data biaya, margin, stok, pelanggan, dan riwayat waktu belum tersedia.",
         results: [
-          "300 product-transaction snapshot dianalisis dari dataset retail lokal.",
-          "K-Means membentuk 3 cluster dari standardized Units Sold dan Unit Price.",
-          "K=3 mencapai silhouette 0.5656 pada ruang dua fitur yang distandardisasi.",
-          "Standard Items, Volume Drivers, dan Premium Stars adalah interpretasi post-hoc dari centroid dan profil cluster, bukan label ground truth.",
-          "AI analyst membantu menjelaskan data dashboard; jawabannya tidak menggantikan validasi bisnis.",
-          "Strategic Product Matrix adalah rule-based lens berbasis median Units Sold dan derived Total Revenue, bukan learned model atau label cluster.",
+          "Sebanyak 300 catatan transaksi produk dianalisis dari dataset retail lokal.",
+          "K-Means membentuk 3 cluster berdasarkan Units Sold dan Unit Price yang telah distandardisasi.",
+          "Konfigurasi K=3 menghasilkan Silhouette Score 0.5656 pada ruang dua fitur model.",
+          "Nama Standard Items, Volume Drivers, dan Premium Stars dibuat setelah melihat karakter centroid; nama tersebut bukan label asli dari dataset.",
+          "AI Analyst membantu menjelaskan konteks dashboard, tetapi jawabannya tetap perlu diperiksa sebelum dipakai untuk keputusan bisnis.",
+          "Strategic Product Matrix memakai aturan sederhana berdasarkan median Units Sold dan Total Revenue, bukan model machine learning tambahan.",
         ],
         contribution: [
-          "Menyiapkan data dan fitur clustering.",
+          "Menyiapkan data dan dua fitur utama untuk clustering.",
           "Membangun dashboard Streamlit multi-tab.",
-          "Mendesain visual overview, analisis, assignment, visualisasi, evaluasi, dan dataset.",
-          "Mengintegrasikan AI analyst untuk diskusi strategi berbasis data.",
+          "Mendesain tampilan overview, analisis produk, penempatan baru, visualisasi, evaluasi model, dan dataset.",
+          "Mengintegrasikan AI Analyst untuk membantu diskusi berdasarkan data dashboard.",
         ],
       },
       concepts: [
-        "Product-transaction snapshot sebagai unit analisis",
-        "Ordered model features: Units Sold lalu Unit Price",
-        "Total Revenue sebagai derived reporting metric",
-        "Data preprocessing dan StandardScaler",
-        "K-Means K=3, model centroid, dan post-hoc cluster labels",
-        "Silhouette 0.5656 pada standardized two-feature space",
+        "Catatan transaksi produk sebagai unit analisis",
+        "Units Sold dan Unit Price sebagai input model",
+        "Total Revenue sebagai nilai turunan untuk pelaporan",
+        "Preprocessing data dan StandardScaler",
+        "K-Means K=3, centroid, dan pemberian nama cluster setelah analisis",
+        "Silhouette Score untuk membaca kualitas pemisahan cluster",
         "Streamlit sebagai dashboard interaktif",
-        "LLM analyst untuk menjelaskan insight berbasis data",
+        "LLM sebagai pendamping untuk menjelaskan insight berbasis data",
       ],
       workflow: [
         "Dataset produk dibaca dan dibersihkan.",
-        "Units Sold dan Unit Price dipilih dalam urutan kontrak model.",
-        "StandardScaler mengubah kedua fitur ke ruang yang sebanding.",
-        "K-Means K=3 meng-assign setiap snapshot ke centroid terdekat.",
-        "Cluster diprofilkan memakai units, price, derived revenue, count, dan share.",
-        "Profil diterjemahkan secara post-hoc menjadi Premium Stars, Volume Drivers, dan Standard Items.",
-        "Dashboard menampilkan insight, visualisasi, evaluasi model, dan ruang diskusi AI.",
+        "Units Sold dan Unit Price dipilih sebagai dua fitur model.",
+        "StandardScaler menyetarakan skala kedua fitur.",
+        "K-Means menempatkan setiap catatan ke centroid terdekat.",
+        "Setiap cluster diringkas berdasarkan jumlah data, rata-rata units, harga, dan nilai transaksi.",
+        "Karakter setiap cluster diterjemahkan menjadi Premium Stars, Volume Drivers, dan Standard Items.",
+        "Dashboard menyajikan hasil, evaluasi, batas penggunaan, dan ruang diskusi dengan AI Analyst.",
       ],
       built: [
-        "Dashboard overview untuk membaca performa produk secara cepat.",
-        "Tab analisis produk untuk melihat detail setiap produk.",
-        "Nearest-cluster assignment untuk snapshot baru berdasarkan input user.",
-        "Visualisasi cluster dan evaluasi model.",
-        "AI Business Analyst Panel untuk diskusi strategi berbasis data dashboard.",
+        "Ringkasan dashboard untuk membaca pola data secara cepat.",
+        "Analisis produk untuk melihat detail setiap catatan.",
+        "Fitur Penempatan Baru untuk mencari cluster terdekat dari input pengguna.",
+        "Visualisasi cluster, centroid, dan evaluasi model.",
+        "AI Analyst untuk berdiskusi menggunakan konteks yang berasal dari dashboard.",
       ],
       outcome:
-        "Pembelajaran utama project ini adalah memisahkan model input, derived metric, profil deskriptif, interpretasi, dan hipotesis bisnis. Dengan batas tersebut, visualisasi dan penjelasan dapat membantu keputusan tanpa melebih-lebihkan bukti yang tersedia.",
+        "Pembelajaran utama project ini adalah membedakan input model, angka turunan untuk laporan, hasil deskriptif, interpretasi, dan hipotesis bisnis. Pemisahan ini membuat dashboard lebih mudah dipahami tanpa melebih-lebihkan kemampuan model.",
       limitations: [
-        "Setiap produk hanya memiliki satu snapshot yang tersedia; tidak ada bukti tren atau perilaku jangka panjang.",
+        "Setiap produk hanya memiliki satu catatan yang tersedia, sehingga belum dapat menunjukkan tren jangka panjang.",
         "Tidak ada data biaya atau margin, sehingga profitabilitas dan keamanan diskon tidak dapat disimpulkan.",
-        "Tidak ada data stock, inventory, traffic, acquisition, repeat purchase, atau loyalty.",
-        "Sistem tidak melakukan demand, revenue, atau sales forecasting.",
-        "Rekomendasi strategi adalah hipotesis untuk eksperimen lanjutan, bukan kebijakan otomatis.",
-        "Price tidak membuktikan margin; units tidak membuktikan traffic atau stockout; snapshot revenue tidak memprediksi revenue masa depan.",
+        "Tidak tersedia data stok, traffic, pelanggan, repeat purchase, atau loyalty.",
+        "Sistem tidak melakukan forecasting permintaan, penjualan, maupun revenue.",
+        "Saran strategi merupakan hipotesis untuk eksperimen berikutnya, bukan keputusan otomatis.",
+        "Harga tinggi tidak membuktikan margin tinggi, jumlah terjual tidak membuktikan traffic, dan nilai transaksi saat ini tidak memprediksi masa depan.",
       ],
     },
   },
@@ -131,10 +131,10 @@ function projectCard(project) {
           <div class="project-meta">${meta}</div>
           <div class="project-tags">${tags}</div>
           <div class="project-card-actions">
-            <a class="mini-link primary-mini-link" href="#project-detail" data-project-detail="${project.slug}">Open Project</a>
-            <a class="mini-link" href="#project-detail" data-project-detail="${project.slug}">Project Case Study</a>
+            <a class="mini-link primary-mini-link" href="#project-detail" data-project-detail="${project.slug}">Buka Project</a>
+            <a class="mini-link" href="#project-detail" data-project-detail="${project.slug}">Studi Kasus</a>
             <a class="mini-link live-demo-link" href="${project.demoLink}" target="_blank" rel="noopener noreferrer">
-              <span>Open Live Demo</span><span class="external-link-icon" aria-hidden="true">↗</span>
+              <span>Buka Demo</span><span class="external-link-icon" aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
@@ -161,14 +161,14 @@ function renderProjectDetail(slug) {
 
   detailContainer.innerHTML = `
     <div class="detail-hero">
-      <a class="mini-link" href="#projects" data-page-link="projects">Back to Projects</a>
-      <p class="eyebrow">Project Learning Module</p>
+      <a class="mini-link" href="#projects" data-page-link="projects">Kembali ke Projects</a>
+      <p class="eyebrow">Detail Project</p>
       <h2>${project.title}</h2>
       <p>${detail.intro}</p>
       <div class="project-tags">${tags}</div>
       <div class="project-card-actions">
         <a class="mini-link primary-mini-link live-demo-link" href="${project.demoLink}" target="_blank" rel="noopener noreferrer">
-          <span>Open Live Application</span><span class="external-link-icon" aria-hidden="true">↗</span>
+          <span>Buka Aplikasi</span><span class="external-link-icon" aria-hidden="true">↗</span>
         </a>
       </div>
     </div>
@@ -189,22 +189,22 @@ function renderProjectDetail(slug) {
         </section>
         <section class="detail-section">
           <small>02</small>
-          <h3>Case Study</h3>
+          <h3>Studi Kasus</h3>
           <div class="case-study-grid">
-            <div><b>Problem</b><p>${detail.caseStudy.problem}</p></div>
-            <div><b>Approach</b><p>${detail.caseStudy.approach}</p></div>
-            <div><b>Output</b><p>${detail.caseStudy.output}</p></div>
-            <div><b>Business Value</b><p>${detail.caseStudy.value}</p></div>
+            <div><b>Masalah</b><p>${detail.caseStudy.problem}</p></div>
+            <div><b>Pendekatan</b><p>${detail.caseStudy.approach}</p></div>
+            <div><b>Hasil</b><p>${detail.caseStudy.output}</p></div>
+            <div><b>Nilai Praktis</b><p>${detail.caseStudy.value}</p></div>
           </div>
         </section>
         <section class="detail-section">
           <small>03</small>
-          <h3>Key Results</h3>
+          <h3>Hasil Utama</h3>
           <ul>${listItems(detail.caseStudy.results)}</ul>
         </section>
         <section class="detail-section">
           <small>04</small>
-          <h3>My Contribution</h3>
+          <h3>Kontribusiku</h3>
           <ul>${listItems(detail.caseStudy.contribution)}</ul>
         </section>
         <section class="detail-section">
@@ -214,32 +214,32 @@ function renderProjectDetail(slug) {
         </section>
         <section class="detail-section">
           <small>06</small>
-          <h3>How It Works</h3>
+          <h3>Cara Kerja</h3>
           <ol>${listItems(detail.workflow)}</ol>
         </section>
         <section class="detail-section">
           <small>07</small>
-          <h3>What I Built</h3>
+          <h3>Yang Saya Bangun</h3>
           <ul>${listItems(detail.built)}</ul>
         </section>
         <section class="detail-section highlight-detail">
           <small>08</small>
-          <h3>Learning Outcome</h3>
+          <h3>Pembelajaran Utama</h3>
           <p>${detail.outcome}</p>
         </section>
         <section class="detail-section">
           <small>09</small>
-          <h3>Limitations</h3>
+          <h3>Batasan</h3>
           <ul>${listItems(detail.limitations)}</ul>
         </section>
         <section class="detail-section">
           <small>10</small>
-          <h3>Project Status</h3>
-          <p><b>Current:</b> Public demo deployed on Streamlit Community Cloud.</p>
-          <p><b>Access:</b> <a class="status-live-link" href="${project.demoLink}" target="_blank" rel="noopener noreferrer">
-            <span>Open the live Smart Product Category Assistant</span><span class="external-link-icon" aria-hidden="true">↗</span>
+          <h3>Status Project</h3>
+          <p><b>Saat ini:</b> Demo publik tersedia melalui Streamlit Community Cloud.</p>
+          <p><b>Akses:</b> <a class="status-live-link" href="${project.demoLink}" target="_blank" rel="noopener noreferrer">
+            <span>Buka Smart Product Category Assistant</span><span class="external-link-icon" aria-hidden="true">↗</span>
           </a></p>
-          <p><b>Next:</b> Continue monitoring deployment reliability, documentation accuracy, and the AI analyst experience.</p>
+          <p><b>Selanjutnya:</b> Memantau kestabilan deployment, menjaga dokumentasi tetap akurat, dan meningkatkan pengalaman AI Analyst.</p>
         </section>
       </div>
     </div>
